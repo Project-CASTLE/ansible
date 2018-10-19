@@ -1,0 +1,15 @@
+---
+- name: "Get Kong Services list"
+  uri:
+    url: "{{ castle_kong_url_api_services }}"
+    method: GET
+  register: reg_kong_services
+
+- name: "Set Fact for 'castle_kong_services'"
+  set_fact:
+    castle_kong_services: "{{ reg_kong_services.json.data }}"
+
+- debug:
+    msg: "{{ item.name }} -> {{ item.protocol }}://{{ item.host }}"
+  with_items:
+    - "{{ castle_kong_services }}"

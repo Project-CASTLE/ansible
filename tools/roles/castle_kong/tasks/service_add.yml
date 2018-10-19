@@ -1,0 +1,10 @@
+---
+- name: "Add Service '{{ kong_service_name }} -> {{ kong_service_url }}' to Kong"
+  uri:
+    url: "{{ castle_kong_url_api_services }}"
+    method: POST
+    body:
+      name: "{{ kong_service_name }}"
+      url: "{{ kong_service_url }}"
+    body_format: json
+    status_code: 200,201,409

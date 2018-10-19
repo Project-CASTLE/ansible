@@ -1,0 +1,8 @@
+---
+# defaults file for castle_kong
+
+castle_kong_url_api: http://192.168.99.100:8001
+
+castle_kong_url_api_consumers: "{{ castle_kong_url_api }}/consumers/"
+castle_kong_url_api_services: "{{ castle_kong_url_api }}/services/"
+
