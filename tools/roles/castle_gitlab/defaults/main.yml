@@ -1,0 +1,4 @@
+---
+castle_gitlab_server: 192.168.99.100
+
+castle_gitlab_api_projects: https://{{ castle_gitlab_server }}/api/v4/projects
