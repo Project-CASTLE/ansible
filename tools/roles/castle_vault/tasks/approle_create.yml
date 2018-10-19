@@ -1,0 +1,16 @@
+- name: Create AppRole '{{ approle_name }}'
+  uri:
+    url: "{{ url_vault_api_auth }}/approle/role/{{ approle_name }}"
+    method: POST
+    headers: 
+      X-Vault-Token: "{{ vault_token }}"
+    body_format: json
+    body:
+      policies: 
+        - "{{ approle_policies }}"
+    status_code: 200,204,400
+  register: reg_response
+  failed_when: "reg_response.status == 400 and 'path is already in use' not in reg_response.json.errors"
+
+- debug:
+    msg: "{{ reg_response }}"

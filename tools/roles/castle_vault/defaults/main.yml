@@ -1,0 +1,4 @@
+---
+url_vault_api: http://vault:8200
+url_vault_api_auth: "{{ url_vault_api }}/v1/sys/auth"
+url_vault_api_namespaces: "{{ url_vault_api }}/v1/sys/namespaces"
