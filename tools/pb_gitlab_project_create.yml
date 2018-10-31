@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: no
+
+  roles:
+    - castle_gitlab
+
+  tasks:
+    - include_tasks: roles/castle_gitlab/tasks/project_create.yml
+      vars:
+        project_name: test

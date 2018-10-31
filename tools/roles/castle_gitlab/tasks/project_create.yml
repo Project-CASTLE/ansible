@@ -1,0 +1,15 @@
+- name: "castle_gitlab - Create Project '{{ project_name }}'"
+  uri:
+    url: "{{ castle_gitlab_api_projects }}"
+    method: POST
+    headers:
+      Content-Type: application/json
+      PRIVATE-TOKEN: eLD3PYZccTudAaodtsgf
+    body:
+      name: "{{ project_name }}"
+    body_format: json
+    status_code: 201
+  register: registered_project
+
+- debug:
+     msg: "{{ registered_project }}"
