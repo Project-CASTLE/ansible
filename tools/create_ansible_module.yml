@@ -1,5 +1,11 @@
+#
+# ansible-playbook -e module_name=module_test create_ansible_module.yml
+# 
 - hosts: localhost
   gather_facts: no
+
+  vars:
+    project: "{{ castle_gitlab_ansible_module_prefix }}-{{ module_name }}"
 
   roles:
     - castle_gitlab

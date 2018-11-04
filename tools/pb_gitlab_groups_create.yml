@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: no
+
+  roles:
+    - castle_gitlab
+
+  tasks:
+    - include_tasks: roles/castle_gitlab/tasks/group_create.yml
+      vars:
+        group_name: "{{ item }}"
+      with_items:
+        - "{{ castle_gitlab_ansible_groups }}"

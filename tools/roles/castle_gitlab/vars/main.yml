@@ -1,2 +1,19 @@
 ---
-# vars file for castle_gitlab
+castle_gitlab_ansible_groups:
+        #- Ansible
+  - Ansible_Linux
+  - Ansible_Network
+  - Ansible_Windows
+
+
+castle_gitlab_ansible_issue_labels:
+
+  - name: Bug Report
+    description: Bug Report
+    color: "#AA0000"
+    priority: 1
+
+  - name: Feature Request
+    description: Feature Request
+    color: "#00AA00"
+    priority: null

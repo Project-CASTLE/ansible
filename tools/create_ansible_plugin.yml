@@ -1,5 +1,11 @@
+#
+# ansible-playbook -e plugin_name=plugin_test -e plugin_type=callback create_ansible_plugin.yml
+# 
 - hosts: localhost
   gather_facts: no
+
+  vars:
+    project: "{{ castle_gitlab_ansible_plugin_prefix }}-{{ plugin_type }}-{{ plugin_name }}"
 
   roles:
     - castle_gitlab

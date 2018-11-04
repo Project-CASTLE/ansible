@@ -1,5 +1,11 @@
+#
+# ansible-playbook -e role_name=role_test create_ansible_role.yml
+# 
 - hosts: localhost
   gather_facts: no
+
+  vars:
+    project: "{{ castle_gitlab_ansible_role_prefix }}-{{ role_name }}"
 
   roles:
     - castle_gitlab

@@ -1,4 +1,11 @@
 ---
 castle_gitlab_server: gitlab
 
-castle_gitlab_api_projects: https://{{ castle_gitlab_server }}/api/v4/projects
+castle_gitlab_api: "https://{{ castle_gitlab_server }}/api/v4"
+
+castle_gitlab_api_groups:   "{{ castle_gitlab_api }}/groups"
+castle_gitlab_api_projects: "{{ castle_gitlab_api }}/projects"
+
+castle_gitlab_ansible_module_prefix: ansible-module
+castle_gitlab_ansible_plugin_prefix: ansible-plugin
+castle_gitlab_ansible_role_prefix: ansible-role

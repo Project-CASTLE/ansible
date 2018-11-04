@@ -1,0 +1,15 @@
+- name: "castle_gitlab - Create Issue Label '{{ issue_label.name }}' for Project '{{ project_name }}'"
+  uri:
+    url: "{{ castle_gitlab_api_projects }}/{{ 'Ansible%2F' + project_name }}/labels"
+    method: POST
+    headers:
+      Content-Type: application/json
+      PRIVATE-TOKEN: eLD3PYZccTudAaodtsgf
+    body:
+      name: "{{ issue_label.name }}"
+      color: "{{ issue_label.color }}"
+      description: "{{ issue_label.description }}"
+      priority: "{{ issue_label.priority }}"
+    body_format: json
+    status_code: 201
+    validate_certs: no

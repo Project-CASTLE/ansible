@@ -1,0 +1,17 @@
+- name: "castle_gitlab - Create Group '{{ group_name }}'"
+  uri:
+    url: "{{ castle_gitlab_api_groups }}"
+    method: POST
+    headers:
+      Content-Type: application/json
+      PRIVATE-TOKEN: eLD3PYZccTudAaodtsgf
+    body:
+      name: "{{ group_name }}"
+      path: "{{ group_path | default(group_name) }}"
+    body_format: json
+    status_code: 201
+    validate_certs: no
+  register: registered_group
+
+- debug:
+     msg: "{{ registered_group }}"
